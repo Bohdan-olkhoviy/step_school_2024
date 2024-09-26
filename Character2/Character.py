@@ -19,3 +19,4 @@ class character:
                   f"Шкода: {self.damage}\nЗахист: {self.defendse}"
 
             def take_damage(self, damage):
+                self.health = max(self.health - damage, 0)
