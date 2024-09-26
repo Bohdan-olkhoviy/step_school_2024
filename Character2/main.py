@@ -1,15 +1,14 @@
 from Character import character
+from berserk import Berserk
 
 player1 = character("Gojo", 100, 5, 0)
-player1.show_stats()
+print(player1)
 
-player2 = character("Sukuna", 100, 3, 2)
+player2 = Berserk("Sukuna", 100, 3, 2)
 player2.show_stats
 
-player1.attack(player2)
+while player1.health > 0 and player2.health > 0:
+    player1.attack(player2)
+    player2.attack(player1)
 
-a = 3
-b = 5
-
-print(id(a))
-print(id(b))
+print(f'\n{player1}\n{player2}\n')
