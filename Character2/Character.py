@@ -1,22 +1,15 @@
-
-class character:
-    name = ' '
-    Health = 100
-    damage = 5
-    Defendse = 90
-
-    def __init__(self, name, health, damage, Defendse):
+class Character:
+    def __init__(self, name, health, damage, defense=0):
         self.name = name
         self.health = health
         self.damage = damage
-        self.Defends = Defendse
+        self.defense = defense
 
-        def show_stats(self):
-            print(self)
+    def attack(self, other):
+        print(f"{self.name} атакує {other.name}")
+        other.take_damage(self.damage)
 
-        def __str__(self):
-            return f"-- {self.name} -- \nЗдоровья: {self.health}\n" \
-                  f"Шкода: {self.damage}\nЗахист: {self.defendse}"
-
-            def take_damage(self, damage):
-                self.health = max(self.health - damage, 0)
+    def take_damage(self, damage):
+        actual_damage = max(0, damage - self.defense)
+        self.health -= actual_damage
+        print(f"{self.name} отримав {actual_damage} шкоди, залишилось здоров'я: {self.health}")
