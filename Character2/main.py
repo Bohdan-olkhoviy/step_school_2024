@@ -2,6 +2,7 @@ from Character import Character
 from berserk import Berserk
 from assasin import Assassin
 from ninja import Ninja
+from Arena import Arena
 
 player1 = Character("Gojo", 101, 150, 0)
 player2 = Berserk("Sukuna", 75, 75, 50)
